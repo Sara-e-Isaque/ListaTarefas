@@ -7,22 +7,7 @@ Nova tarefa
 <section>
   <ul class="list-group">
     <li class="List-group-item task-item" *ngFor="let task of tasks">
-      <div class="form-group form-check">
-        <input type="checkbox" class="form-check-input" />
-      </div>
-      <div [innerHTML] = "task.description" class="task-item-description"
-      [ngClass] = "task.completed ? 'task-completed' : ''">
-    </div>
-    <div>
-      <button type="button" [routerLink]="['/edit', task.id]" class="btn btn-primary mr-1">
-      Alterar
-    </button>
-    </div>
-    <div>
-      <button type="button"  class="btn btn-danger">
-        Excluir
-      </button>
-    </div>
+      <app-task-list-item [task]= "task" class="task-item"></app-task-list-item>
 
     </li>
   </ul>
